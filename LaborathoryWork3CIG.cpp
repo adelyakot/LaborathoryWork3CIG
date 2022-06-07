@@ -57,7 +57,7 @@ public:
         CreateVertexBuffer();
         CreateIndexBuffer();
 
-        n_pEffect = new LightingTechnique();
+        m_pEffect = new LightingTechnique();
 
         if (!m_pEffect->Init())
         {
