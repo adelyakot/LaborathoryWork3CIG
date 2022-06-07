@@ -11,7 +11,6 @@ struct DirectionLight
     float AmbientIntensity;
     Vector3f Direction;
     float DiffuseIntensity;
-
 };
 
 class LightingTechnique : public Technique
@@ -20,7 +19,7 @@ public:
     LightingTechnique();
     virtual bool Init();
 
-    void SetWVP(const Matrix4f* WVP);
+    void SetWVP(const Matrix4f& WVP);
     void SetWorldMatrix(const Matrix4f& WVP);
     void SetTextureUnit(unsigned int TextureUnit);
     void SetDirectionalLight(const DirectionLight& Light);
@@ -34,7 +33,7 @@ private:
         GLuint AmbientIntensity;
         GLuint Direction;
         GLuint DiffuseIntensity;
-    } m_dirLightLocation
+    } m_dirLightLocation;
 };
 
 #endif // LIGHTINGTECHNIQUE_H

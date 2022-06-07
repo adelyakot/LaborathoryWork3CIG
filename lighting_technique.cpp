@@ -20,7 +20,6 @@ void main()                                                                     
     Normal0 = (gWorld * vec4(Normal, 0.0)).xyz;                                     \n\
 }";
 
-
 static const char* pFS = "                                                          \n\
 #version 330                                                                        \n\
                                                                                     \n\
@@ -42,7 +41,7 @@ uniform sampler2D gSampler;                                                     
                                                                                     \n\
 void main()                                                                         \n\
 {                                                                                   \n\
-        vec4 AmbientColor = vec4(gDirectionalLight.Color, 1.0f) *                       \n\
+    vec4 AmbientColor = vec4(gDirectionalLight.Color, 1.0f) *                       \n\
                         gDirectionalLight.AmbientIntensity;                         \n\
                                                                                     \n\
     float DiffuseFactor = dot(normalize(Normal0), -gDirectionalLight.Direction);    \n\
@@ -57,8 +56,9 @@ void main()                                                                     
     else{                                                                           \n\
         DiffuseColor = vec4(0,0,0,0);                                               \n\
     }                                                                               \n\
+                                                                                    \n\
     FragColor = texture2D(gSampler, TexCoord0.xy) *                                 \n\
-                (AmbientColor + DiffuseColor);                                       \n\
+                (AmbientColor + DiffuseColor);                                      \n\
 }";
 
 
@@ -104,10 +104,11 @@ bool LightingTechnique::Init()
         m_dirLightLocation.Direction == 0xFFFFFFFF) {
         return false;
     }
+
     return true;
 }
 
-void LightingTechnique::SetWVP(const Matrix4f* WVP)
+void LightingTechnique::SetWVP(const Matrix4f& WVP)
 {
     glUniformMatrix4fv(m_WVPLocation, 1, GL_TRUE, (const GLfloat*)WVP.m);
 }
@@ -117,6 +118,7 @@ void LightingTechnique::SetWorldMatrix(const Matrix4f& WorldInverse)
     glUniformMatrix4fv(m_WorldMatrixLocation, 1, GL_TRUE, (const GLfloat*)WorldInverse.m);
 }
 
+
 void LightingTechnique::SetTextureUnit(unsigned int TextureUnit)
 {
     glUniform1i(m_samplerLocation, TextureUnit);
@@ -125,8 +127,8 @@ void LightingTechnique::SetTextureUnit(unsigned int TextureUnit)
 
 void LightingTechnique::SetDirectionalLight(const DirectionLight& Light)
 {
-    glUniform3f(m_dirLightColorLocation.Color, Light.Color.x, Light.Color.y, Light.Color.z);
-    glUniform1f(m_dirLightAmbientIntensityLocation.AmbientIntensity, Light.AmbientIntensity);
+    glUniform3f(m_dirLightLocation.Color, Light.Color.x, Light.Color.y, Light.Color.z);
+    glUniform1f(m_dirLightLocation.AmbientIntensity, Light.AmbientIntensity);
     Vector3f Direction = Light.Direction;
     Direction.Normalize();
     glUniform3f(m_dirLightLocation.Direction, Direction.x, Direction.y, Direction.z);
