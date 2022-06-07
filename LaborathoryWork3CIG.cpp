@@ -265,6 +265,9 @@ int main(int argc, char** argv)
         return 1;
     }
 
+    glutDisplayFunc(RenderSceneCB);
+    glutIdleFunc(RenderSceneCB);
+
     glutMainLoop();
 
     return 0;
