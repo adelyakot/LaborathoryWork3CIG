@@ -1,4 +1,4 @@
-#include "lighting_technique.h"
+﻿#include "lighting_technique.h"
 
 static const char* pVS = "                                                          \n\
 #version 330                                                                        \n\

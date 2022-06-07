@@ -253,6 +253,6 @@ int main(int argc, char** argv)
     pApp->Run();
 
     delete pApp;
-    
+
     return 0;
 }
