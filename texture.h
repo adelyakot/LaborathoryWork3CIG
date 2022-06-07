@@ -5,6 +5,7 @@
 
 #include <GL/glew.h>
 #include <Magick++.h>
+using namespace Magick;
 
 class Texture
 {

@@ -5,9 +5,6 @@
 #include <GL/glew.h>
 #include <GL/freeglut.h>
 
-#include "Magick++.h"
-using namespace Magick;
-
 #include "pipeline.h"
 #include "camera.h"
 #include "texture.h"
@@ -246,7 +243,10 @@ int main(int argc, char** argv)
         fprintf(stderr, "Error: '%s'\n", glewGetErrorString(res));
         return 1;
     }
-    InitializeMagick(*argv);
+
+
+    Magick::InitializeMagick(*argv);
+
     glClearColor(0.0f, 0.0f, 0.0f, 0.0f);
     glFrontFace(GL_CW);
     glCullFace(GL_BACK);
