@@ -1,4 +1,3 @@
-#pragma once
 #ifndef TEXTURE_H
 #define	TEXTURE_H
 
@@ -26,6 +25,3 @@ private:
 
 
 #endif	/* TEXTURE_H */
-
-
-

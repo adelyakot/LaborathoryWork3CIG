@@ -1,4 +1,3 @@
-#pragma once
 #ifndef PIPELINE_H
 #define	PIPELINE_H
 
@@ -77,4 +76,3 @@ private:
 
 
 #endif	/* PIPELINE_H */
-

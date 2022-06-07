@@ -1,6 +1,7 @@
 #include "math_3d.h"
 //#define ToRadian(x) ((x) * 3.141593f / 180.0f)
 //#define ToDegree(x) ((x) * 180.0f / 3.141593f)
+
 Vector3f Vector3f::Cross(const Vector3f& v) const
 {
     const float _x = y * v.z - z * v.y;

@@ -118,8 +118,6 @@ bool Camera::OnKeyboard(int Key)
 
 void Camera::OnMouse(int x, int y)
 {
-    if ((x == m_mousePos.x) && (y == m_mousePos.y)) return;
-
     const int DeltaX = x - m_mousePos.x;
     const int DeltaY = y - m_mousePos.y;
 

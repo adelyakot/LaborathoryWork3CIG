@@ -5,6 +5,9 @@
 #include <GL/glew.h>
 #include <GL/freeglut.h>
 
+#include "Magick++.h"
+using namespace Magick;
+
 #include "pipeline.h"
 #include "camera.h"
 #include "texture.h"
@@ -243,7 +246,7 @@ int main(int argc, char** argv)
         fprintf(stderr, "Error: '%s'\n", glewGetErrorString(res));
         return 1;
     }
-
+    InitializeMagick(*argv);
     glClearColor(0.0f, 0.0f, 0.0f, 0.0f);
     glFrontFace(GL_CW);
     glCullFace(GL_BACK);
@@ -256,7 +259,7 @@ int main(int argc, char** argv)
 
     glUniform1i(gSampler, 0);
 
-    pTexture = new Texture(GL_TEXTURE_2D, "../Content/test.png");
+    pTexture = new Texture(GL_TEXTURE_2D, "prostyn.jpg");
 
     if (!pTexture->Load()) {
         return 1;
