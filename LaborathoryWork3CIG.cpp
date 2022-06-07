@@ -208,7 +208,9 @@ private:
 
         unsigned int VertexCount = ARRAY_SIZE_IN_ELEMENTS(Vertices);
 
+
         CalcNormals(pIndices, IndexCount, Vertices, VertexCount);
+
 
         glGenBuffers(1, &m_VBO);
         glBindBuffer(GL_ARRAY_BUFFER, m_VBO);
