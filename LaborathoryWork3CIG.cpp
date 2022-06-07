@@ -68,7 +68,7 @@ public:
 
         m_pEffect->SetTextureUnit(0);
 
-        m_pTexture = new Texture(GL_TEXTURE_2D, "bloodmilk.jpg");
+        m_pTexture = new Texture(GL_TEXTURE_2D, "mramor.jpg");
 
         if (!m_pTexture->Load()) {
             return false;
