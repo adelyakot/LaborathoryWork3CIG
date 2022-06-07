@@ -233,6 +233,8 @@ int main(int argc, char** argv)
     glutGameModeString("1280x1024@32");
     glutEnterGameMode();
 
+   
+
     InitializeGlutCallbacks();
 
     pGameCamera = new Camera(WINDOW_WIDTH, WINDOW_HEIGHT);
@@ -243,7 +245,6 @@ int main(int argc, char** argv)
         fprintf(stderr, "Error: '%s'\n", glewGetErrorString(res));
         return 1;
     }
-
 
     Magick::InitializeMagick(*argv);
 
@@ -264,9 +265,6 @@ int main(int argc, char** argv)
     if (!pTexture->Load()) {
         return 1;
     }
-
-    glutDisplayFunc(RenderSceneCB);
-    glutIdleFunc(RenderSceneCB);
 
     glutMainLoop();
 
