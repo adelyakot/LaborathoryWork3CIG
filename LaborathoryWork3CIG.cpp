@@ -9,7 +9,7 @@
 #include "camera.h"
 #include "texture.h"
 
-#define WINDOW_WIDTH  1280
+#define WINDOW_WIDTH  980
 #define WINDOW_HEIGHT 1024
 
 struct Vertex
