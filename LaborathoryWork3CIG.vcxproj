@@ -139,6 +139,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="callbacks.cpp" />
     <ClCompile Include="camera.cpp" />
     <ClCompile Include="LaborathoryWork3CIG.cpp" />
     <ClCompile Include="math_3d.cpp" />
@@ -146,6 +147,7 @@
     <ClCompile Include="texture.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="callbacks.h" />
     <ClInclude Include="camera.h" />
     <ClInclude Include="math_3d.h" />
     <ClInclude Include="pipeline.h" />
