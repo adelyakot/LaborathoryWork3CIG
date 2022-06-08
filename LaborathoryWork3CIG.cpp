@@ -97,6 +97,7 @@ public:
 
         glClear(GL_COLOR_BUFFER_BIT);
 
+
         m_scale += 0.01f;//скорость вращения цвета
 
         PointLight pl[3];
